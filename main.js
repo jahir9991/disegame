@@ -1,6 +1,6 @@
 var player = 1;
 
-var winningScore = 10;
+var winningScore = 20;
 
 var p1winningCount = 0;
 var p2winningCount = 0;
@@ -30,15 +30,19 @@ var player2CurrentDom;
 var player1EditBtn;
 var player2EditBtn;
 
+var p1winsDom;
+var p2winsDom;
+
+
 
 var checkWin = function () {
     if (player1Score >= winningScore) {
         alert("Player 1 Wins!!")
-
+        winsCountp1();
         reStart();
     } else if (player2Score >= winningScore) {
         alert("Player 2 Wins!!")
-        p2winningCount++;
+        winsCountp2();
         reStart();
     }
 }
@@ -91,6 +95,8 @@ window.onload = function () {
     player1EditBtn.onclick = player1Edit;
     player2EditBtn.onclick = player2Edit;
 
+    p1winsDom = document.getElementById('player1wins');
+    p2winsDom = document.getElementById('player2wins');
 
 
 
@@ -187,3 +193,13 @@ function player2Edit() {
     }
 }
 
+function winsCountp1(){
+    p1winningCount++;
+    p1winsDom.innerHTML = p1winningCount;
+
+}
+
+function winsCountp2(){
+    p2winningCount++;
+    p2winsDom.innerHTML = p2winningCount;
+}

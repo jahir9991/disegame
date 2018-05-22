@@ -16,68 +16,65 @@
     <main class="container">
         <div class="row">
             <div class="col-md-4 col-xs-4">
-
-                <div id="player1" class="panel panel-primary">
+                <div id="player1" class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            <span id="player1Name">Insert name</span>
+                            <span id="player1Name">Insert Player1 name</span>
                             <button id="player1EditBtn" class="btn btn-sm">Edit</button>
-
-
                         </h3>
                     </div>
                     <div class="panel-body">
-                        <p>Score</p>
+                        <h2>Score</h2>
                         <h2 id="score">0</h2>
-                        <p>Current</p>
+                        <h1>Current</h1>
                         <h1 id="current">0</h1>
                     </div>
                 </div>
-
-
-
             </div>
 
-            <div class="col-md-4 col-xs-4">
-                <h1 id="playGround">-</h1>
-            </div>
-            <div class="col-md-4 col-xs-4">
-                <div id="player2" class="player-wrapper player2 ">
-                    <h2>
-                        <span id="player2Name">Insert name </span>
-                        <button id="player2EditBtn" class="btn btn-sm">Edit</button>
-                    </h2>
-                    <p>Score</p>
-                    <h2 id="score2">0</h2>
-                    <p>Current</p>
-                    <h1 id="current2">0</h1>
-
+            <div align="center">
+                <div class="col-md-4 col-xs-4">
+                    <h1 id="playGround">-</h1>
+                    <button class="btn btn-success" id="hit" onclick="hit()">HIT</button>
+                    <button class="btn btn-danger" id="hold" onclick="hold()">HOLD</button>
                 </div>
             </div>
-
-            <div class="row" style="text-align: center;">
-                <button class="btn btn-success" id="hit" onclick="hit()">HIT</button>
-                <button class="btn btn-danger" id="hold" onclick="hold()">HOLD</button>
-            </div>
-
-            <div class="row" style="text-align: center;">
-                <h2>Result</h2>
-                <div class="row">
-                    <div class="col-md-3 col-xs-3">
-                        <h2>Player1:</h2>
+            
+            <div class="col-md-4 col-xs-4">
+                <div id="player2" class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <span id="player2Name">Insert Player2 name</span>
+                            <button id="player2EditBtn" class="btn btn-sm">Edit</button>
+                        </h3>
                     </div>
-                    <div class="col-md-3 col-xs-3">
-                        <h2 id="result1"></h2>
-                    </div>
-                    <div class="col-md-3 col-xs-3">
-                        <h2>Player2:</h2>
-                    </div>
-                    <div class="col-md-3 col-xs-3">
-                        <h2 id="result1"></h2>
+                    <div class="panel-body">
+                        <h2>Score</h2>
+                        <h2 id="score2">0</h2>
+                        <h1>Current</h1>
+                        <h1 id="current2">0</h1>
                     </div>
                 </div>
             </div>
+        </div>     
+            
+            
+        <table class="table table-striped table-hover ">
+            <div align="center" style="border:2px solid green">
+                Wins
+            </div> 
+            <tr class="info">
+            <td>Player 1</td>
+            <td></td>
+            <td id="player1wins">0</td>
+            </tr>
 
+            <tr class="warning">
+            <td>Player 2</td>
+            <td></td>
+            <td id="player2wins">0</td>
+            </tr>
+        </table> 
     </main>
 
 </body>
