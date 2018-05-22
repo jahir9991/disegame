@@ -6,24 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="./vendor/font-awesome.css"> -->
+
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="main.js"></script>
 </head>
 
 <body>
-    
+
     <main class="container">
         <div class="row">
             <div class="col-md-4 col-xs-4">
-                <div id="player1" class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
+
+                <div class="card bg-success mb-3" id="player1">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            <i class="fas fa-user"></i>
                             <span id="player1Name">Insert Player1 name</span>
-                            <button id="player1EditBtn" class="btn btn-sm">Edit</button>
-                        </h3>
+                            <button id="player1EditBtn" class="btn btn-sm btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </h4>
                     </div>
-                    <div class="panel-body">
+                    <div class="card-body">
+
                         <h2>Score</h2>
                         <h2 id="score">0</h2>
                         <h1>Current</h1>
@@ -32,23 +40,40 @@
                 </div>
             </div>
 
-            <div align="center">
-                <div class="col-md-4 col-xs-4">
-                    <h1 id="playGround">-</h1>
-                    <button class="btn btn-success" id="hit" onclick="hit()">HIT</button>
-                    <button class="btn btn-danger" id="hold" onclick="hold()">HOLD</button>
-                </div>
-            </div>
-            
+
+
             <div class="col-md-4 col-xs-4">
-                <div id="player2" class="panel panel-warning">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">
-                            <span id="player2Name">Insert Player2 name</span>
-                            <button id="player2EditBtn" class="btn btn-sm">Edit</button>
-                        </h3>
+                <div class="card" align="center">
+                    <div class="card-body">
+                        <h1 id="playGround" hidden>-</h1>
+                        <div class="canvas">
+                            <i id="loader" class="fas fa-spinner fa-spin" style="font-size:100px; display: none;"></i>
+                            <canvas id="myCanvas">bad luck</canvas>
+                        </div>
+                        <button class="btn btn-success btn-lg" id="hit" onclick="hit()">HIT</button>
+                        <button class="btn btn-danger btn-lg" id="hold" onclick="hold()">HOLD</button>
                     </div>
-                    <div class="panel-body">
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="col-md-4 col-xs-4">
+                <div class="card  mb-3" id="player2">
+                    <div class="card-header">
+                        <h4 class="card-title">
+                            <i class="fas fa-user"></i>
+                            <span id="player2Name">Insert Player2 name</span>
+                            <button id="player2EditBtn" class="btn btn-sm btn-info">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+
                         <h2>Score</h2>
                         <h2 id="score2">0</h2>
                         <h1>Current</h1>
@@ -56,26 +81,38 @@
                     </div>
                 </div>
             </div>
-        </div>     
-            
-            
+        </div>
+
+
         <table class="table table-striped table-hover ">
-            <div align="center" style="border:2px solid green">
-                Wins
-            </div> 
+            <div style="border:2px solid green">
+                <div class="text-center">
+                    Wins
+                </div>
+                <div >
+                    <button id="config" class="btn btn-sm">
+                       settings <i class="fa fa-cogn"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
             <tr class="info">
-            <td>Player 1</td>
-            <td></td>
-            <td id="player1wins">0</td>
+                <td>Player 1</td>
+                <td></td>
+                <td id="player1wins">0</td>
             </tr>
 
             <tr class="warning">
-            <td>Player 2</td>
-            <td></td>
-            <td id="player2wins">0</td>
+                <td>Player 2</td>
+                <td></td>
+                <td id="player2wins">0</td>
             </tr>
-        </table> 
+        </table>
     </main>
+    <script src="dice.js"></script>
+    <script src="main.js"></script>
 
 </body>
 

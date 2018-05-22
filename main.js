@@ -33,7 +33,8 @@ var player2EditBtn;
 var p1winsDom;
 var p2winsDom;
 
-
+var loaderDom;
+var canvasDom;
 
 var checkWin = function () {
     if (player1Score >= winningScore) {
@@ -59,6 +60,9 @@ function reStart() {
 
 
 window.onload = function () {
+    loaderDom = document.getElementById('loader');
+    canvasDom = document.getElementById('myCanvas');
+
     playGroundDom = document.getElementById('playGround');
 
     player1Dom = document.getElementById('player1');
@@ -78,7 +82,7 @@ window.onload = function () {
     player1Current = 0;
     player1CurrentDom = document.getElementById('current');
 
-   
+
     // player 2
     player2Score = 0;
     player2Current = 0;
@@ -104,10 +108,23 @@ window.onload = function () {
 
 
 function hit() {
+
+
     var randomNumber = Math.floor(Math.random() * 5 + 1);
     playGroundDom.innerHTML = randomNumber;
 
-    calculate(randomNumber);
+    resetCanvas();
+
+    setTimeout(() => {
+        loaderDom.style.display = 'none';
+        canvasDom.style.display = 'block'
+        drawDice(randomNumber);
+        calculate(randomNumber);
+
+    }, 1000);
+
+
+
 
 
 }
@@ -115,9 +132,9 @@ function hit() {
 function hold() {
     if (player == 1) {
 
-        player1Dom.classList.remove("active")
+        player1Dom.classList.remove("bg-success")
 
-        player2Dom.className += "player2 active";
+        player2Dom.className += "bg-success";
 
         player1Score = player1Score + player1Current;
         player1ScoreDom.innerHTML = player1Score;
@@ -129,8 +146,8 @@ function hold() {
         player = 2;
 
     } else {
-        player2Dom.classList.remove("active")
-        player1Dom.className += "player1 active";
+        player2Dom.classList.remove("bg-success")
+        player1Dom.className += " bg-success";
 
 
         player2Score = player2Score + player2Current;
@@ -152,13 +169,18 @@ function calculate(randomNumber) {
             player1CurrentDom.innerHTML = player1Current;
         }
         else {
+
+            player1Dom.classList.remove("bg-success")
+            player2Dom.className += " bg-success";
+
+
             player1Current = 0;
             player1CurrentDom.innerHTML = player1Current;
-            alert("Your chance is over!");
-            player = 2;
-            player1Dom.classList.remove("active")
 
-            player2Dom.className += "player2 active";
+            player = 2;
+
+            alert("Your chance is over!");
+
         }
 
     } else {
@@ -172,8 +194,8 @@ function calculate(randomNumber) {
             alert("Your chance is over!");
             player = 1;
 
-            player2Dom.classList.remove("active")
-            player1Dom.className += "player1 active";
+            player2Dom.classList.remove("bg-success")
+            player1Dom.className += " bg-success";
 
         }
     }
@@ -193,13 +215,13 @@ function player2Edit() {
     }
 }
 
-function winsCountp1(){
+function winsCountp1() {
     p1winningCount++;
     p1winsDom.innerHTML = p1winningCount;
 
 }
 
-function winsCountp2(){
+function winsCountp2() {
     p2winningCount++;
     p2winsDom.innerHTML = p2winningCount;
 }
