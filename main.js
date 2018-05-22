@@ -1,6 +1,7 @@
 var player = 1;
 
-var winningScore = 20;
+var winningScore=10;
+
 
 var p1winningCount = 0;
 var p2winningCount = 0;
@@ -63,6 +64,8 @@ window.onload = function () {
     loaderDom = document.getElementById('loader');
     canvasDom = document.getElementById('myCanvas');
 
+    winScoreDom = document.getElementById('winingScore');
+
     playGroundDom = document.getElementById('playGround');
 
     player1Dom = document.getElementById('player1');
@@ -81,6 +84,7 @@ window.onload = function () {
 
     player1Current = 0;
     player1CurrentDom = document.getElementById('current');
+
 
 
     // player 2
@@ -134,7 +138,7 @@ function hold() {
 
         player1Dom.classList.remove("bg-success")
 
-        player2Dom.className += "bg-success";
+        player2Dom.className += " bg-success";
 
         player1Score = player1Score + player1Current;
         player1ScoreDom.innerHTML = player1Score;
@@ -224,4 +228,19 @@ function winsCountp1() {
 function winsCountp2() {
     p2winningCount++;
     p2winsDom.innerHTML = p2winningCount;
+}
+
+function sideNav(){
+    document.getElementById("mySidenav").style.width = "250px";
+
+}
+function closeNav(){
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function displayNum(){
+    winningScore = parseInt(document.getElementById('winningValueInput').value) ;
+    winScoreDom.innerHTML=winningScore;
+    //console.log(winningScore)
+    
 }

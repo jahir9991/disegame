@@ -89,10 +89,9 @@
                 <div class="text-center">
                     Wins
                 </div>
-                <div >
-                    <button id="config" class="btn btn-sm">
-                       settings <i class="fa fa-cogn"></i>
-                    </button>
+                <div>
+                    <button id="config" class="btn btn-sm" onclick="sideNav()">settings</button>
+                    <span id="winingScore">10</span>
 
                 </div>
 
@@ -110,6 +109,16 @@
                 <td id="player2wins">0</td>
             </tr>
         </table>
+
+        <div id="mySidenav" class="sidenav">
+            <button class="btn btn-sm" onclick="closeNav()">Exit</button>
+            <div>
+                <input type="number" id="winningValueInput" value="10">
+                <input type="submit" id="Submit" onclick="displayNum()">
+            </div>
+            <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+            <h1>This is a side nav</h1>
+        </div>
     </main>
     <script src="dice.js"></script>
     <script src="main.js"></script>
