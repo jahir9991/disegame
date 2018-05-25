@@ -1,0 +1,29 @@
+{
+  "name": "disegame",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000d\u0000i\u0000s\u0000e\u0000g\u0000a\u0000m\u0000e\u0000\r\u0000 \u0000",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "git-scripts": "^0.2.1",
+    "surge": "^0.20.1"
+  },
+  "git": {
+    "scripts": {
+      "pre-push": "surge --project ./ --domain example-githooks.surge.sh"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jahir9991/disegame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jahir9991/disegame/issues"
+  },
+  "homepage": "https://github.com/jahir9991/disegame#readme"
+}
